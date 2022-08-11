@@ -18,12 +18,12 @@ jobs:
             distribution: 'adopt'
             cache: maven
         - name: Build With Maven
-          run:
-            mvn -B package --file pom.xml
-            mkdir artifacts && cp target/*.jar artifacts
-            cd artifacts && ls
+          run: 
+                mvn -B package --file pom.xml
+                mkdir artifacts && cp target/*.jar artifacts
+                cd artifacts && ls
         - name: Save artifact
           uses: actions/upload-artifact@v2
           with:
             name: github-actions-artifact
-            path: artifact
+            path: artifacts
