@@ -3,6 +3,7 @@ spring:
     name: micro01
   cloud:
     config:
+      enabled: true
       uri: http://localhost:8084
       username: root
       password: s3cr3t
